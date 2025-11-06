@@ -1,0 +1,196 @@
+@media (max-width: 1150px) {
+  .sales__row {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .sales__item {
+    padding: 20px 0;
+    flex-direction: column;
+    align-items: center;
+    width: unset;
+  }
+  .sales__item-img {
+    margin-bottom: 10px;
+  }
+  .sales__item-text {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: auto;
+    margin-left: unset;
+    width: unset;
+    text-align: center;
+  }
+  .sales__item-rating {
+    margin: unset;
+  }
+  .sales__item-price__wrapper {
+    align-items: center;
+
+    column-gap: 15px;
+    margin-left: unset;
+  }
+}
+@media (max-width: 1024px) {
+  .info {
+    padding: 40px 0 80px;
+  }
+  .info__row {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px 20px;
+    border-bottom: none;
+  }
+  .profile__games-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .catalog__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .nav {
+    column-gap: 25px;
+  }
+
+  .search {
+    padding: 10px;
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sales__row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .info {
+    padding: 25px 0 45px;
+  }
+  .profile__stats-row {
+    gap: 50px;
+    flex-wrap: wrap;
+  }
+  .profile__save {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .header {
+    padding: 40px 0;
+  }
+  .profile__nav-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+    gap: 10px;
+  }
+  .profile__nav-item {
+    border-radius: 5px;
+    padding: 5px;
+    background-color: rgba(38, 40, 50, 0.5);
+  }
+  .profile__nav-item--active {
+    background-color: rgba(105, 114, 153, 0.5);
+  }
+  .profile__tab--active::before {
+    display: none !important;
+  }
+  .profile__tab:hover::before {
+    width: 0;
+  }
+  .profile__nav {
+    padding: 10px 20px;
+  }
+  .profile__games-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .catalog__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .game-page__row {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .modal-add__card {
+    text-align: center;
+    padding: 20px 30px;
+  }
+  .modal-add__card-row {
+    align-items: center;
+    flex-direction: column;
+  }
+  .profile__reviews-item__content-text {
+    max-width: 700px;
+  }
+  .profile__reviews-item {
+    flex-direction: column;
+  }
+  .profile__reviews-title {
+    margin: 10px 0 0;
+  }
+  .profile__reviews-item__content-rating {
+    margin-bottom: 15px;
+  }
+  .search {
+    padding: 10px 45px 10px 10px;
+    max-width: unset;
+  }
+}
+@media (max-width: 600px) {
+  .sales__row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .game-ratings {
+    display: none;
+  }
+  .modal-add__card {
+    padding: 20px 50px;
+    margin: 20px;
+    text-align: center;
+  }
+  .profile__reviews-item__img {
+    max-width: 180px;
+  }
+  /* .profile__reviews-item {
+    flex-direction: column;
+  }
+  .profile__reviews-title {
+    margin: 10px 0 0;
+  }
+  .profile__reviews-item__content-rating {
+    margin-bottom: 15px;
+  } */
+}
+@media (max-width: 500px) {
+  .profile__games-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .catalog__grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media (max-width: 425px) {
+  .sales__row {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .logo {
+    font-size: 30px;
+  }
+  .profile-stats__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .menu-icon-wrapper {
+    right: 0px;
+  }
+  .rating-box {
+    .rating-box__stars {
+      justify-content: center;
+    }
+    i {
+      font-size: 20px;
+    }
+  }
+
+  .modal-review__text {
+    max-width: 300px;
+  }
+}

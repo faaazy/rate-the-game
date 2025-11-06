@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="yandex-verification" content="8437fccaa7dc483a" />
+    <title>RateTheGame</title>
+    <meta
+      name="description"
+      content="RateTheGame — платформа для оценки видеоигр и написания рецензий. Ставьте баллы играм, отслеживайте пройденные и отложенные игры, организуйте коллекцию по категориям. Бесплатный игровой трекер."
+    />
+    <meta
+      name="keywords"
+      content="оценка игр, рецензии на игры, игровые рейтинги, моя игровая библиотека, отслеживание игр, игры по категориям, backlog игр, список игр, поставить оценку игре, написать рецензию на игру, игровой трекер, сайт для оценки видеоигр, пройденные игры, отложенные игры, игровая коллекция.
+"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "RateTheGame",
+        "description": "Платформа для оценки видеоигр, написания рецензий и отслеживания игровой коллекции",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "keywords": "оценка игр, рецензии на игры, игровые рейтинги, отслеживание игр, игровой трекер"
+      }
+    </script>
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/media.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <script defer type="module" src="./main.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header__row">
+          <div class="logo"><a href="#header">RateTheGame</a></div>
+          <nav class="nav">
+            <div class="nav__item">
+              <a
+                href="#!"
+                class="nav__item-link"
+                data-profile-link
+                data-lang="nav-profile"
+                >Profile</a
+              >
+            </div>
+            <div class="search">
+              <input
+                class="search__input"
+                type="text"
+                placeholder="Search"
+                data-lang="search"
+              />
+              <img src="./img/search.svg" alt="" class="search__img" />
+            </div>
+            <div class="language-switcher">
+              <button class="lang-btn active" data-lang="en">EN</button>
+              <button class="lang-btn" data-lang="ru">RU</button>
+            </div>
+          </nav>
+          <div class="menu-icon-wrapper">
+            <div class="menu-icon"></div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <h1 data-lang="hero-title">
+            RateTheGame - Оценивайте и отслеживайте ваши игры
+          </h1>
+          <p data-lang="hero-description">
+            Ведущая платформа для оценки видеоигр, написания рецензий и
+            управления игровой коллекцией. Отслеживайте пройденные игры,
+            составляйте списки желаний и делитесь своими оценками.
+          </p>
+        </div>
+      </section>
+
+      <section class="info">
+        <div class="container">
+          <div class="info__row">
+            <div class="profile-stats">
+              <div class="profile-stats__grid">
+                <div class="profile-stats__grid-item">
+                  <div
+                    class="profile-stats__grid-item__title"
+                    data-stats="played"
+                  >
+                    Played
+                  </div>
+                  <div class="profile-stats__grid-item__num">0</div>
+                </div>
+                <div class="profile-stats__grid-item">
+                  <div
+                    class="profile-stats__grid-item__title"
+                    data-stats="playing"
+                  >
+                    Playing
+                  </div>
+                  <div class="profile-stats__grid-item__num">0</div>
+                </div>
+                <div class="profile-stats__grid-item">
+                  <div
+                    class="profile-stats__grid-item__title"
+                    data-stats="reviews"
+                  >
+                    Reviews
+                  </div>
+                  <div class="profile-stats__grid-item__num">0</div>
+                </div>
+                <div class="profile-stats__grid-item">
+                  <div
+                    class="profile-stats__grid-item__title"
+                    data-stats="dropped"
+                  >
+                    Dropped
+                  </div>
+                  <div class="profile-stats__grid-item__num">0</div>
+                </div>
+                <div class="profile-stats__grid-item">
+                  <div
+                    class="profile-stats__grid-item__title"
+                    data-stats="wishlist"
+                  >
+                    Wishlist
+                  </div>
+                  <div class="profile-stats__grid-item__num">0</div>
+                </div>
+                <div class="profile-stats__grid-item">
+                  <div
+                    class="profile-stats__grid-item__title"
+                    data-stats="favorite"
+                  >
+                    Favorites
+                  </div>
+                  <div class="profile-stats__grid-item__num">0</div>
+                </div>
+              </div>
+              <div class="profile-stats__title" data-lang="profile-stats">
+                Profile Stats
+              </div>
+            </div>
+            <div class="game-ratings">
+              <div class="game-ratings__row">
+                <div class="game-ratings__row-item"></div>
+                <div class="game-ratings__row-item"></div>
+                <div class="game-ratings__row-item"></div>
+                <div class="game-ratings__row-item"></div>
+                <div class="game-ratings__row-item"></div>
+                <div class="game-ratings__row-item"></div>
+                <div class="game-ratings__row-item"></div>
+                <div class="game-ratings__row-item"></div>
+                <div class="game-ratings__row-item"></div>
+                <div class="game-ratings__row-item"></div>
+              </div>
+              <div class="game-ratings__stars">
+                <div class="game-ratings__stars-item">
+                  1<img src="./img/star.svg" alt="" />
+                </div>
+                <div class="game-ratings__stars-item">
+                  10<img src="./img/star.svg" alt="" />
+                </div>
+              </div>
+              <div class="game-ratings__title" data-lang="personal-ratings">
+                Personal Ratings
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="sales">
+        <div class="container">
+          <div class="sales__title" data-lang="sales-title">Special Offers</div>
+          <div class="sales__row">
+            <!-- sales items from js -->
+          </div>
+          <div class="sales__show-btn__wrapper">
+            <button
+              class="sales__show-more__btn"
+              data-show-more-btn
+              data-lang="show-more"
+            >
+              Show More
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-page hidden">
+        <div class="container">
+          <div class="game-page__row">
+            <div class="game__left">
+              <div class="game__img">
+                <img src="" />
+              </div>
+              <div class="game__modal-btn" data-lang="review-btn">
+                Log or Review
+              </div>
+            </div>
+
+            <div class="game__center">
+              <div class="game__title"></div>
+              <div class="game__release"></div>
+
+              <div class="game__rating">
+                <div class="game__rating-count">
+                  <span>Steam Reviews </span>
+                </div>
+                <div class="game__rating-score"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="catalog hidden">
+      <div class="container">
+        <div class="catalog__title" data-lang="catalog-title">Catalog</div>
+        <div class="loader hidden"></div>
+        <div class="catalog__grid">
+          <!-- catalog items from js -->
+        </div>
+      </div>
+    </div>
+
+    <div class="profile hidden">
+      <div class="container">
+        <div class="profile__nav">
+          <div class="profile__nav-row">
+            <div
+              class="profile__nav-item profile__nav-item--active profile__tab--active"
+            >
+              <a href="#!" class="profile__tab" data-lang="profile-title"
+                >Profile</a
+              >
+            </div>
+            <div class="profile__nav-item">
+              <a href="#!" class="profile__tab" data-lang="profile-games"
+                >Games</a
+              >
+            </div>
+            <div class="profile__nav-item">
+              <a href="#!" class="profile__tab" data-lang="profile-reviews"
+                >Reviews</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="profile__stats" data-profile-tab>
+          <div class="profile__stats-row">
+            <div class="profile__stats-item">
+              <div class="profile__stats-item__num" data-profile="wishlist">
+                000
+              </div>
+              <div
+                class="profile__stats-item__name"
+                data-lang="profile-stats-wishlist"
+                ]
+              >
+                Games Wishlist
+              </div>
+            </div>
+            <div class="profile__stats-item">
+              <div class="profile__stats-item__num" data-profile="total">
+                000
+              </div>
+              <div
+                class="profile__stats-item__name"
+                data-lang="profile-stats-total"
+                ]
+              >
+                Total Games Played
+              </div>
+            </div>
+            <div class="profile__stats-item">
+              <div class="profile__stats-item__num" data-profile="reviews">
+                000
+              </div>
+              <div
+                class="profile__stats-item__name"
+                data-lang="profile-stats-reviews"
+                ]
+              >
+                Games Reviews
+              </div>
+            </div>
+          </div>
+          <div class="profile__save">
+            <a data-json-file data-lang="profile-stats-download" ]
+              >Click here to download save file</a
+            >
+            <div class="profile__save-file">
+              <label for="fileInput" data-lang="profile-stats-file" ]
+                >Drop your data file to return games</label
+              >
+              <input type="file" id="fileInput" />
+            </div>
+          </div>
+        </div>
+
+        <div class="profile__games hidden" data-profile-tab>
+          <div class="profile__games-filter">
+            <div
+              class="profile__games-filter__item profile__games-filter__item--active"
+              data-lang="profile-filter-all"
+            >
+              All
+            </div>
+            <div
+              class="profile__games-filter__item"
+              data-lang="profile-filter-played"
+            >
+              Played
+            </div>
+            <div
+              class="profile__games-filter__item"
+              data-lang="profile-filter-playing"
+            >
+              Playing
+            </div>
+            <div
+              class="profile__games-filter__item"
+              data-lang="profile-filter-dropped"
+            >
+              Dropped
+            </div>
+            <div
+              class="profile__games-filter__item"
+              data-lang="profile-filter-wishlist"
+            >
+              Wishlist
+            </div>
+            <div
+              class="profile__games-filter__item"
+              data-lang="profile-filter-favorite"
+            >
+              Favorite
+            </div>
+          </div>
+          <div class="profile__games-grid">
+            <!-- profile game from js -->
+          </div>
+        </div>
+
+        <div class="profile__reviews hidden" data-profile-tab>
+          <div class="profile__reviews-row">
+            <!--  -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-add hidden">
+      <div class="modal-add__card">
+        <div class="modal-add__card-title"></div>
+        <div class="modal-add__card-row">
+          <div class="modal-add__card-left">
+            <div class="modal-add__card-img">
+              <img src="" alt="" />
+            </div>
+
+            <ul class="modal-add__card-select">
+              <li class="modal-add__card-select__item">
+                <i class="fa-solid fa-gamepad"></i
+                ><span data-lang="modal-played">Played</span>
+              </li>
+              <li class="modal-add__card-select__item">
+                <i class="fa-solid fa-play"></i
+                ><span data-lang="modal-playing">Playing</span>
+              </li>
+              <li class="modal-add__card-select__item">
+                <i class="fa-solid fa-circle-xmark"></i
+                ><span data-lang="modal-dropped">Dropped</span>
+              </li>
+              <li class="modal-add__card-select__item">
+                <i class="fa-solid fa-gift"></i
+                ><span data-lang="modal-wishlist">Wishlist</span>
+              </li>
+              <li class="modal-add__card-select__item">
+                <i class="fa-solid fa-heart"></i
+                ><span data-lang="modal-favorite">Favorite</span>
+              </li>
+            </ul>
+
+            <div class="modal-add__card-clear" data-lang="modal-clear">
+              Clear
+            </div>
+          </div>
+
+          <div class="modal-add__card-right">
+            <div class="rating-box">
+              <div class="rating-box__title" data-lang="modal-rating">
+                Rating
+              </div>
+              <div class="rating-box__stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+
+            <div class="modal-review">
+              <div class="modal-review__title" data-lang="modal-review">
+                Review
+              </div>
+              <textarea
+                class="modal-review__text"
+                rows="7"
+                cols="40"
+                maxlength="500"
+                placeholder="How you feel about this game..."
+                data-lang="modal-placeholder"
+              ></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal__btns">
+          <button class="modal-add__card-cancel" data-lang="modal-cancel">
+            Cancel
+          </button>
+          <button class="modal-add__card-btn" data-lang="modal-add">
+            Add to list
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+
+
