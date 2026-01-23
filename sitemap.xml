@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://faaazy.github.io/RateTheGame/</loc>
+        <lastmod>2025-11-27T15:43:52+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://faaazy.github.io/RateTheGame/#/profile</loc>
+        <lastmod>2025-11-27T17:30:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0</priority>
+    </url>
+    <url>
+        <loc>https://faaazy.github.io/RateTheGame/#/profile/games</loc>
+        <lastmod>2025-11-27T17:30:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0</priority>
+    </url>
+    <url>
+        <loc>https://faaazy.github.io/RateTheGame/#/profile/reviews</loc>
+        <lastmod>2025-11-27T17:30:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0</priority>
+    </url>
+</urlset>

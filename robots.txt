@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Sitemap: https://faaazy.github.io/RateTheGame/sitemap.xml
+
+Disallow: /api/
+Disallow: /admin/
