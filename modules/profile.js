@@ -5,6 +5,8 @@ export function initProfile(cardsData) {
   const headerRow = document.querySelector(".header__row");
   const gamePage = document.querySelector(".game-page");
 
+  const redirectLink = document.querySelector("[data-redirect='reviews']");
+
   function getEnglishStatus(russianStatus) {
     const statusMap = {
       Все: "All",
@@ -14,6 +16,7 @@ export function initProfile(cardsData) {
       Желаемое: "Wishlist",
       Избранное: "Favorite",
     };
+
     return statusMap[russianStatus] || russianStatus;
   }
 
@@ -26,8 +29,31 @@ export function initProfile(cardsData) {
       Wishlist: "Желаемое",
       Favorite: "Избранное",
     };
+
     return statusMap[englishStatus] || englishStatus;
   }
+
+  document.addEventListener("click", (event) => {
+    if (event.target.matches('[data-redirect="reviews"]')) {
+      event.preventDefault();
+
+      catalog.classList.add("hidden");
+      gamePage.classList.add("hidden");
+      headerRow.classList.remove("header__row--mobile");
+      document.querySelector(".nav").classList.remove("nav--mobile");
+      document.querySelector(".menu-icon").classList.remove("menu-icon-active");
+
+      profile.classList.remove("hidden");
+      for (const elem of mainElems) {
+        elem.classList.add("hidden");
+      }
+
+      const reviewsTabBtn = document.querySelector('[data-tab="reviews"]');
+      if (reviewsTabBtn) {
+        reviewsTabBtn.click();
+      }
+    }
+  });
 
   headerRow.addEventListener("click", (event) => {
     if (event.target.closest(".logo") || event.target.closest(".nav__item")) {
@@ -59,12 +85,7 @@ export function initProfile(cardsData) {
 
   tabsBtns.forEach((item, index) => {
     item.addEventListener("click", () => {
-      tabsBtns.forEach((item) =>
-        item.classList.remove(
-          "profile__tab--active",
-          "profile__nav-item--active"
-        )
-      );
+      tabsBtns.forEach((item) => item.classList.remove("profile__tab--active", "profile__nav-item--active"));
 
       item.classList.add("profile__tab--active");
       item.classList.add("profile__nav-item--active");
@@ -83,13 +104,9 @@ export function initProfile(cardsData) {
 
   profileGamesFilter.addEventListener("click", (event) => {
     if (event.target.matches(".profile__games-filter__item")) {
-      const profileGamesFilterItems = document.querySelectorAll(
-        ".profile__games-filter__item"
-      );
+      const profileGamesFilterItems = document.querySelectorAll(".profile__games-filter__item");
 
-      profileGamesFilterItems.forEach((item) =>
-        item.classList.remove("profile__games-filter__item--active")
-      );
+      profileGamesFilterItems.forEach((item) => item.classList.remove("profile__games-filter__item--active"));
 
       event.target.classList.add("profile__games-filter__item--active");
 
@@ -99,21 +116,15 @@ export function initProfile(cardsData) {
       if (currentFilter === "All") {
         addGameToProfile(cardsData);
       } else {
-        const filteredArr = cardsData.filter(
-          (item) => item.selected == currentFilter
-        );
+        const filteredArr = cardsData.filter((item) => item.selected == currentFilter);
         addGameToProfile(filteredArr);
       }
     }
   });
 
   function applyCurrentFilter() {
-    const profileGamesFilterItems = document.querySelectorAll(
-      ".profile__games-filter__item"
-    );
-    profileGamesFilterItems.forEach((item) =>
-      item.classList.remove("profile__games-filter__item--active")
-    );
+    const profileGamesFilterItems = document.querySelectorAll(".profile__games-filter__item");
+    profileGamesFilterItems.forEach((item) => item.classList.remove("profile__games-filter__item--active"));
 
     const currentLang = document.documentElement.getAttribute("lang") || "en";
 
@@ -124,19 +135,14 @@ export function initProfile(cardsData) {
       filterTextToFind = getEnglishStatusForDisplay(currentFilter);
     }
 
-    const activeFilter = Array.from(profileGamesFilterItems).find(
-      (item) => item.innerText === filterTextToFind
-    );
+    const activeFilter = Array.from(profileGamesFilterItems).find((item) => item.innerText === filterTextToFind);
 
-    if (activeFilter)
-      activeFilter.classList.add("profile__games-filter__item--active");
+    if (activeFilter) activeFilter.classList.add("profile__games-filter__item--active");
 
     if (currentFilter === "All") {
       addGameToProfile(cardsData);
     } else {
-      const filteredGames = cardsData.filter(
-        (item) => item.selected == currentFilter
-      );
+      const filteredGames = cardsData.filter((item) => item.selected == currentFilter);
       addGameToProfile(filteredGames);
     }
   }
@@ -154,9 +160,7 @@ export function initProfile(cardsData) {
   }
 
   function addGameToProfile(arr = cardsData) {
-    const profileGamesContainer = document.querySelector(
-      ".profile__games-grid"
-    );
+    const profileGamesContainer = document.querySelector(".profile__games-grid");
     profileGamesContainer.innerHTML = "";
 
     for (const item of arr) {
@@ -168,7 +172,7 @@ export function initProfile(cardsData) {
           <div class="profile-game__item">
             <h2 class="profile-game__name">${title}</h2>
             <div class="profile-game__img">
-              <img src=${img} alt=${title}>
+              <img src=${img} alt=${title} title=${title}>
             </div>
             <div class="profile-game__selected">${russianStatus}</div>
           </div>
@@ -179,9 +183,7 @@ export function initProfile(cardsData) {
   }
 
   function addReviewToProfile(arr = cardsData) {
-    const profileReviewsContainer = document.querySelector(
-      ".profile__reviews-row"
-    );
+    const profileReviewsContainer = document.querySelector(".profile__reviews-row");
     profileReviewsContainer.innerHTML = "";
 
     for (const item of arr) {
@@ -223,11 +225,7 @@ export function initProfile(cardsData) {
     };
 
     for (const card of cardsData) {
-      if (
-        card.selected === "Played" ||
-        card.selected === "Dropped" ||
-        card.selected === "Favorite"
-      ) {
+      if (card.selected === "Played" || card.selected === "Dropped" || card.selected === "Favorite") {
         profileStatsCounter.total += 1;
       }
 
@@ -240,7 +238,6 @@ export function initProfile(cardsData) {
       }
     }
 
-    // Обновляем DOM
     profileStats.forEach((item) => {
       const profileStatNum = item.querySelector(".profile__stats-item__num");
       const category = profileStatNum.dataset.profile;
@@ -282,9 +279,7 @@ export function initProfile(cardsData) {
     changeStats(cardsData);
 
     if (currentFilter !== "All") {
-      const filteredGames = cardsData.filter(
-        (item) => item.selected == currentFilter
-      );
+      const filteredGames = cardsData.filter((item) => item.selected == currentFilter);
       addGameToProfile(filteredGames);
     } else {
       addGameToProfile(cardsData);
@@ -302,9 +297,7 @@ export function initProfile(cardsData) {
 }
 
 function changeStats(cardsData) {
-  const profileStatsTitles = document.querySelectorAll(
-    ".profile-stats__grid-item__title"
-  );
+  const profileStatsTitles = document.querySelectorAll(".profile-stats__grid-item__title");
 
   for (const profileStatTitle of profileStatsTitles) {
     profileStatTitle.nextElementSibling.innerText = 0;
@@ -340,13 +333,11 @@ function changeStats(cardsData) {
       if (profileStatTitle.textContent === expectedText) {
         if (englishKey === "reviews") {
           if (item.review && item.review.trim() !== "") {
-            profileStatTitle.nextElementSibling.innerText =
-              parseInt(profileStatTitle.nextElementSibling.innerText) + 1;
+            profileStatTitle.nextElementSibling.innerText = parseInt(profileStatTitle.nextElementSibling.innerText) + 1;
           }
         } else {
           if (item.selected.toLowerCase() === englishKey) {
-            profileStatTitle.nextElementSibling.innerText =
-              parseInt(profileStatTitle.nextElementSibling.innerText) + 1;
+            profileStatTitle.nextElementSibling.innerText = parseInt(profileStatTitle.nextElementSibling.innerText) + 1;
           }
         }
       }
