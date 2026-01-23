@@ -37,7 +37,7 @@ body {
 nav {
   display: flex;
   align-items: center;
-  column-gap: 50px;
+  column-gap: 25px;
   font-size: 20px;
   padding: 0 10px;
 }
@@ -177,6 +177,10 @@ nav {
     margin-top: 10px;
     max-width: 700px;
     color: #d7dfeb;
+
+    a {
+      text-decoration: underline;
+    }
   }
 }
 
@@ -599,6 +603,7 @@ nav {
 }
 .modal-add__card-clear {
   margin: 20px 0;
+  width: 100%;
   padding: 8px;
   text-align: center;
 
@@ -660,6 +665,9 @@ nav {
   padding: 5px;
   resize: vertical;
   background-color: #7279a1;
+  &::placeholder {
+    color: #c0c6d4;
+  }
 }
 
 /* Profile */
@@ -820,6 +828,7 @@ label {
 .game__modal-btn {
   padding: 6px 8px;
   max-width: 260px;
+  width: 100%;
   text-align: center;
   margin: 15px auto;
 
@@ -835,6 +844,40 @@ label {
 }
 .game__release {
   margin-bottom: 15px;
+}
+
+.game-page__reviews {
+  margin-top: 40px;
+
+  h2 {
+    font-size: 20px;
+    font-weight: 600;
+  }
+}
+
+.game-page__reviews-item {
+  margin-block: 20px;
+  padding: 20px;
+
+  background-color: #575d7a;
+  border-radius: 15px;
+
+  .game-page__reviews-item__heading {
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+  }
+
+  .game-page__reviews-item__name {
+    font-size: 22px;
+    font-weight: 700;
+    color: #c0c6d4;
+  }
+
+  .game-page__reviews-item__text {
+    margin-top: 10px;
+    line-height: 1.5;
+  }
 }
 
 /* rating-box */
