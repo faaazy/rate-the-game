@@ -45,6 +45,10 @@
   .catalog__grid {
     grid-template-columns: repeat(3, 1fr);
   }
+  .search {
+    padding: 10px;
+    max-width: 250px;
+  }
 }
 
 @media (max-width: 900px) {
