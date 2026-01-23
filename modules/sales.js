@@ -27,14 +27,13 @@ export function initSales(getData) {
     }
 
     for (let i = 0; i < itemsLeft; i++) {
-      const { title, metacriticScore, normalPrice, salePrice, savings, thumb } =
-        newArr[itemsCounter];
+      const { title, metacriticScore, normalPrice, salePrice, savings, thumb } = newArr[itemsCounter];
       itemsCounter++;
 
       const html = `
-          <div class="sales__item">
+          <a class="sales__item" href="#/${title}">
             <div class="sales__item-img">
-              <img src="${thumb}" alt="${title}" />
+              <img loading="lazy" src="${thumb}" alt="${title}" title="${title}" />
             </div>
             <div class="sales__item-text">
               <h2 class="sales__item-title">${title}</h2>
@@ -47,7 +46,7 @@ export function initSales(getData) {
                 </div>
               </div>
             </div>
-          </div>
+          </a>
         `;
 
       salesContainer.insertAdjacentHTML("beforeend", html);
