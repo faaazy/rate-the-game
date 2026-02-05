@@ -903,3 +903,30 @@ label {
     }
   }
 }
+.error,
+.error_container {
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.error_title {
+  font-size: 15vw;
+  font-weight: 700;
+}
+.error_desc {
+  font-weight: 600;
+  font-size: 20px;
+  max-width: 67%;
+  text-align: center;
+}
+.error_btn {
+  margin-top: 30px;
+  font-weight: 600;
+
+  padding: 10px;
+  background-color: #575d7a;
+}
